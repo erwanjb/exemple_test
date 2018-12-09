@@ -1,0 +1,5 @@
+node_modules/
+server/**/*.js
+server/**/*.js.map
+coverage/
+.nyc_output/

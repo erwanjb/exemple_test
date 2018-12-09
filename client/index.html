@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>exemple test</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>exemple de tests unitaires</h1>
+	<div class="moyenne">
+		<h2>Calcul de moyenne</h2>
+		<p>remplir au moins un champ parmis les 4</p>
+		<form class="number">
+			<input type="text" placeholder="nombre 1" id="nbr1">
+			<input type="text" placeholder="nombre 2" id="nbr2">
+			<input type="text" placeholder="nombre 3" id="nbr3">
+			<input type="text" placeholder="nombre 4" id="nbr4">
+			<button id="submitNumber">Calculer</button>
+		</form>
+		<div class="resultat">
+			<p>La moyenne est: </p>
+			<span id="resultatNumber"></span>
+		</div>
+	</div>
+	<div class="replace">
+		<h2>Remplacer une expression par une autre dans un texte</h2>
+		<p>remplir au moins la zone de texte et l'expression à remplacer, la nouvelle expression peut etre laisser vide, dans
+			ce cas l'expression à remplacer sera enlevée</p>
+		<form class="text">
+			<textarea id="text"></textarea>
+			<input type="text" placeholder="expression à remplacer" id="old">
+			<input type="text" placeholder="nouvelle expression" id="new">
+			<button id="submitText">Remplacer</button>
+		</form>
+		<div class="resultat">
+			<p>Le nouveau texte est :</p>
+			<span id="resultatText"></span>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

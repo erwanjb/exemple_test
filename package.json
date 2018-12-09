@@ -1,0 +1,45 @@
+{
+  "name": "exemple_test",
+  "version": "1.0.0",
+  "description": "exemple de tests unitaires",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "nyc mocha mocha -c \"./server/*.spec.js\" --recursive",
+    "start": "babel-node index.js"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "server/**/*.js"
+    ],
+    "exclude": [
+      "server/**/*.spec.js",
+      "server/index.js"
+    ],
+    "reporter": [
+      "lcov"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erwanjb/exemple_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erwanjb/exemple_test/issues"
+  },
+  "homepage": "https://github.com/erwanjb/exemple_test#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "typescript": "^3.2.1"
+  },
+  "dependencies": {
+    "@types/mocha": "^5.2.5",
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "express": "^4.16.4"
+  }
+}
