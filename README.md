@@ -26,3 +26,40 @@ pour lancer lest test et le coverage, dans une autre console, faire la commande 
 ça vous fait passer les tests et ça crée un dossier coverage dans notre dossier exemple_test, allez dedans vous trouverez un dossier lcov-report, aller dedans et double clicker sur le fichier index, ça vous ouvre dans le navigateur le coverage sur les tests.
 Pour débugguer les tests, allez dans visual studio code, ouvrez le dossier exemple_test et dans le menu de gauche, ouvrez l'onglet Debug et sélectionner mocha unit test et faire play, ça lancera les tests dans la console de L'IDE.
 Mettez des breakpoints (points d'arret) au endroits ou vous pensez qu'il y a des problèmes, si vous ne savez pas ou exactement ou le mettre, n'hésiter pas à les mettre au début et à débugguer pas à pas pour visualiser le problème.
+
+## Exemple de test sur une fonction
+fonction a tester:
+```ts
+export function sommeDeDeuxNombres(a:number, b:number): number {
+    
+    if(typeof a !==  'number' || typeof b !== 'number') {
+        throw new Error('les paramettre de la fonction doivent être des nombres')
+    }
+
+    return a + b
+}
+```
+
+test de la fonction: (spec)
+```ts
+import { sommeDeDeuxNombres } from './sommeDeDeuxNombres'
+import { expect } from 'chai'
+
+describe('sommeDeDeuxNombres', () => {
+
+    it("test 1 b n'est pas un nombre la fonction doit throw", () => {
+        const a = 1
+        const b = 'a' 
+
+        expect(()=>sommeDeDeuxNombres(a, b)).to.throw('les paramettre de la fonction doivent être des nombres')
+    })
+
+    it('test 2', () => {
+        const a = 1
+        const b = 4 
+
+        const somme = sommeDeDeuxNombres(a, b)
+        expect(somme).to.equal(5)
+    })
+})
+```

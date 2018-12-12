@@ -38,6 +38,31 @@
 			<span id="resultatText"></span>
 		</div>
 	</div>
+	<div class="salaire">
+		<h2>Calculer le salaire net des employés et les ranger par ordre croissant</h2>
+		<form class="sal">
+			<div class="sal-classe">
+				<input type="text" placeholder="nom de l'employé 1" id="nom1">
+				<input type="number" placeholder="salaire brut de l'employé 1" id="salaire1">
+				<input type="number" placeholder="taux de charge de l'employé 1" id="taux1">
+			</div>
+			<div class="sal-classe">
+				<input type="text" placeholder="nom de l'employé 2" id="nom2">
+				<input type="number" placeholder="salaire brut de l'employé 2" id="salaire2">
+				<input type="number" placeholder="taux de charge de l'employé 2" id="taux2">
+			</div>
+			<div class="sal-classe">
+				<input type="text" placeholder="nom de l'employé 3" id="nom3">
+				<input type="number" placeholder="salaire brut de l'employé 3" id="salaire3">
+				<input type="number" placeholder="taux de charge de l'employé 3" id="taux3">
+			</div>
+			<button id="submitSalaire">Calculer</button>
+		</form>
+		<div class="resultat">
+			<p>Les salaires dans l'ordre croissant :</p>
+			<span id="resultatSalaire"></span>
+		</div>
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script src="script.js"></script>
 </body>

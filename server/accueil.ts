@@ -20,4 +20,9 @@ export function accueil(app) {
 
 		res.send(newText)
 	})
+
+	app.post("/accueil/salaire", (req, res) => {
+
+		res.send('')
+	})
 } 

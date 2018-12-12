@@ -1,5 +1,6 @@
 const submitNumber = document.getElementById("submitNumber")
 const submitText = document.getElementById("submitText")
+const submitSalaire = document.getElementById("submitSalaire")
 
 submitNumber.addEventListener('click', (e) => {
 
@@ -56,6 +57,41 @@ submitText.addEventListener('click', (e) => {
 				old, // équivaut à old: old
 				newExpression // équivaut à newExpression: newExpression
 			}
+		}).then(res => {
+			resultat.innerHTML = res.data
+		})
+	}
+})
+
+submitSalaire.addEventListener('click', (e) => {
+	e.preventDefault()
+	const salaire1 = {
+		nom: document.getElementById('nom1').value,
+		brut: document.getElementById('salaire1').value,
+		taux: document.getElementById('taux1').value
+	}
+	const salaire2 = {
+		nom: document.getElementById('nom2').value,
+		brut: document.getElementById('salaire2').value,
+		taux: document.getElementById('taux2').value
+	}
+	const salaire3 = {
+		nom: document.getElementById('nom3').value,
+		brut: document.getElementById('salaire3').value,
+		taux: document.getElementById('taux3').value
+	}
+	const resultat = document.getElementById('resultatSalaire')
+
+	if (!salaire1.nom || !salaire2.nom || !salaire3.nom || !salaire1.brut || !salaire2.brut || !salaire3.brut || !salaire1.taux || !salaire2.taux || !salaire3.taux) {
+
+		resultat.innerHTML = 'veuiller remplir tous les champs'
+
+	} else {
+
+		axios({
+			method: "post",
+			url: 'http://localhost:4444/accueil/salaire',
+			data: [salaire1, salaire2, salaire3]
 		}).then(res => {
 			resultat.innerHTML = res.data
 		})
